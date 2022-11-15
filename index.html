@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task crud</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 mx-auto">
+            <div>
+              <label for="ProductName">ProductName</label>
+              <input
+                type="text"
+                id="ProductName"
+                class="form-control"
+                oninput="validation()"
+              />
+
+              <label for="ProductPrice">ProductPrice</label>
+              <input
+                type="text"
+                id="ProductPrice"
+                class="form-control"
+                oninput="validatNum()"
+              />
+
+              <label for="ProductCategory">ProductCategory</label>
+              <input
+                type="text"
+                id="ProductCategory"
+                class="form-control"
+                oninput="validatCat()"
+              />
+
+              <label for="ProductDesc">ProductDesc</label>
+              <textarea
+                type="text"
+                id="ProductDesc"
+                class="form-control"
+                oninput="validatDes()"
+              >
+              </textarea>
+
+              <button class="btn btn-info my-4" id="add" onclick="addProduct()">
+                Add Product
+              </button>
+              <button
+                class="btn btn-warning my-4 d-none"
+                id="update"
+                onclick="editElement()"
+              >
+                Update
+              </button>
+              <button
+                class="btn btn-info my-4"
+                id="clear"
+                onclick="clearForm()"
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <h4 id="alert" class="text-danger text-center m-auto py-4 d-none">
+          please input valid data
+        </h4>
+      </div>
+
+      <input
+        oninput="searching(this.value)"
+        type="text"
+        placeholder="Searching by name"
+        class="my-2 m-auto w-75 form-control"
+      />
+
+      <table class="table w-75 mx-auto table-striped">
+        <thead>
+          <th>Index</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Descraption</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </thead>
+
+        <tbody id="myTable"></tbody>
+      </table>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
