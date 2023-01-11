@@ -20,6 +20,7 @@
                 id="ProductName"
                 class="form-control"
                 oninput="validation()"
+                maxlength="15"
               />
 
               <label for="ProductPrice">ProductPrice</label>
@@ -28,6 +29,7 @@
                 id="ProductPrice"
                 class="form-control"
                 oninput="validatNum()"
+                maxlength="15"
               />
 
               <label for="ProductCategory">ProductCategory</label>
@@ -36,6 +38,7 @@
                 id="ProductCategory"
                 class="form-control"
                 oninput="validatCat()"
+                maxlength="15"
               />
 
               <label for="ProductDesc">ProductDesc</label>
@@ -43,9 +46,13 @@
                 type="text"
                 id="ProductDesc"
                 class="form-control"
-                oninput="validatDes()"
+                maxlength="100"
               >
               </textarea>
+
+              <h6 id="number" class="number d-flex float-end text-primary py-2">
+                100
+              </h6>
 
               <button class="btn btn-info my-4" id="add" onclick="addProduct()">
                 Add Product
